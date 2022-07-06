@@ -58,7 +58,7 @@ class App
       when 7
         list_music(@musics)
       when 8
-        list_genres(@genres)
+        list_genres(@genre)
       else
         puts 'Invalid choice'
       end
