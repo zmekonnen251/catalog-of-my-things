@@ -29,8 +29,7 @@ module SaveData
   def save_musics(musics)
     musics_to_save = []
     musics.each do |music|
-      musics_to_save << { 'publisher' => music.publisher, 'cover_state' => music.cover_state,
-                          'publish_date' => music.publish_date }
+      musics_to_save << { 'publish_date' => music.publish_date, 'on_spotify' => music.on_spotify }
     end
 
     File.write('./data/musics.json', JSON.generate(musics_to_save))

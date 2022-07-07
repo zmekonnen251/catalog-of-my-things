@@ -1,6 +1,8 @@
 require 'json'
 require_relative '../lib/book'
 require_relative '../lib/label'
+require_relative '../lib/music_album'
+require_relative '../lib/genre'
 
 module LoadData
   def load_books
@@ -32,7 +34,7 @@ module LoadData
       musics_json = File.read('./data/musics.json')
       musics_hash = JSON.parse(musics_json)
       musics_hash.map do |music_hash|
-        Music.new(music_hash['publisher'], music_hash['cover_state'], music_hash['publish_date'])
+        MusicAlbum.new(music_hash['publish_date'], music_hash['on_spotify'])
       end
     else
       []

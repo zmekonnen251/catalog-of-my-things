@@ -4,6 +4,8 @@ require_relative '../data_module/load_data'
 require_relative '../data_module/save_data'
 require_relative 'book_label_utils'
 require_relative './utility_music'
+require_relative 'music_album'
+require_relative 'genre'
 
 class App
   include SaveData
@@ -35,7 +37,7 @@ class App
     puts '7. List all music'
     puts '8. List all genres'
     puts '9. Exit'
-    puts '================'
+    puts '=======Bye Bye========='
     puts 'Enter your choice: '
   end
 
@@ -58,7 +60,7 @@ class App
       when 7
         list_music(@musics)
       when 8
-        list_genres(@genre)
+        list_genres(@genres)
       else
         puts 'Invalid choice'
       end
